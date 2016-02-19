@@ -9,7 +9,7 @@ ExternalProject_Add(seqan
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
         -DCMAKE_INSTALL_PREFIX=${seqan_INSTALL}
+        -DSEQAN_BUILD_SYSTEM=SEQAN_RELEASE_LIBRARY
 )
 
 include_directories(${seqan_INSTALL}/include)
-set(seqan_LIB ${seqan_INSTALL}/lib/libgtest.a)
