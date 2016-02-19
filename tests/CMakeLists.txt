@@ -19,6 +19,10 @@ target_link_libraries(yourproject ${htslib_LIB})
 include("cmake-ext/klib.cmake")
 add_dependencies(yourproject klib)
 
+include("cmake-ext/seqan.cmake")
+add_dependencies(yourproject seqan)
+target_link_libraries(yourproject ${seqan_LIB})
+
 include("cmake-ext/zlib.cmake")
 add_dependencies(yourproject zlib)
 target_link_libraries(yourproject ${zlib_LIB})

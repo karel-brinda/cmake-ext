@@ -7,6 +7,7 @@
 #include "gtest/gtest.h"
 #include "htslib/sam.h"
 #include "kmath.h"
+#include <seqan/sequence.h>
 #include "zlib.h"
 
 int main(){

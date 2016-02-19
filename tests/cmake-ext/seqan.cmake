@@ -1,0 +1,1 @@
+../../seqan.cmake
