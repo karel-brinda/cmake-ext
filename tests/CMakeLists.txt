@@ -2,6 +2,8 @@ cmake_minimum_required (VERSION 2.6)
 project(yourproject)
 add_executable(yourproject example.cpp)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 include(ExternalProject)
 
 include("cmake-ext/gatbcore.cmake")
@@ -18,6 +20,10 @@ target_link_libraries(yourproject ${htslib_LIB})
 
 include("cmake-ext/klib.cmake")
 add_dependencies(yourproject klib)
+
+include("cmake-ext/seqan.cmake")
+add_dependencies(yourproject seqan)
+target_link_libraries(yourproject ${seqan_LIB})
 
 include("cmake-ext/zlib.cmake")
 add_dependencies(yourproject zlib)
