@@ -1,6 +1,8 @@
 *-prefix
 *-install
 
+*.swp
+
 CMakeCache.txt
 CMakeFiles
 CMakeScripts

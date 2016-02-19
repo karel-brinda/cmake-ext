@@ -9,7 +9,12 @@
 #include "kmath.h"
 #include "zlib.h"
 
+#include <EASTL/string.h>
+
+
 int main(){
+	eastl::string str;
+
 	printf("Test\n");
 	return 0;
 }

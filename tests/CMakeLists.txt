@@ -4,6 +4,10 @@ add_executable(yourproject example.cpp)
 
 include(ExternalProject)
 
+include("cmake-ext/eastl.cmake")
+add_dependencies(yourproject eastl)
+target_link_libraries(yourproject ${eastl_LIB})
+
 include("cmake-ext/gatbcore.cmake")
 add_dependencies(yourproject gatbcore)
 target_link_libraries(yourproject ${gatbcore_LIB})
