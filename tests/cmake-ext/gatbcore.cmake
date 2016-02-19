@@ -1,0 +1,1 @@
+../../gatbcore.cmake
