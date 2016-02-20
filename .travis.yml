@@ -6,14 +6,41 @@ os:
 - linux
 cache:
  apt: true
-addons:
-  apt:
-    sources:
-    - ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.7', 'kalakris-cmake']
-    packages:
-    - ['clang-3.7', 'g++-4.9', 'gcc-4.9', 'cmake']
-before_script:
-- export CC=/usr/bin/gcc-4.9
-- export CXX=/usr/bin/g++-4.9
+matrix:
+  include:
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.9
+      env: COMPILER=g++-4.9
+    - compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env: COMPILER=g++-5
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.6
+          packages:
+            - clang-3.6
+      env: COMPILER=clang++-3.6
+    - compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.7
+          packages:
+            - clang-3.7
+      env: COMPILER=clang++-3.7
 script:
 - cd tests && cmake . && (make -j || make -j 8 || make -j 4 || make -j 2 || make VERBOSE=1)
