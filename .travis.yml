@@ -16,4 +16,4 @@ before_script:
 - export CC=/usr/bin/gcc-4.9
 - export CXX=/usr/bin/g++-4.9
 script:
-- cd tests && cmake . && (make -j || make -j 8 || make -j 4 || make -j 2 || make)
+- cd tests && cmake . && (make -j || make -j 8 || make -j 4 || make -j 2 || make VERBOSE=1)
