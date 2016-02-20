@@ -1,14 +1,19 @@
 language: cpp
+compiler:
+ - gcc
+ - clang
 os:
 - linux
 cache:
  apt: true
-install:
-- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-- sudo apt-get update
-- sudo apt-get install g++-4.9
-- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 90
-- sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 90
+addons:
+  apt:
+    sources:
+    - ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.7', 'kalakris-cmake']
+    packages:
+    - ['clang-3.7', 'g++-4.9', 'gcc-4.9', 'cmake']
+before_script:
+- export CC=/usr/bin/gcc-4.9
+- export CXX=/usr/bin/g++-4.9
 script:
-- cd tests && cmake . && (make -j || make -j 8 || make -j 4 || make -j 2 || make) 
-
+- cd tests && cmake . && (make -j || make -j 8 || make -j 4 || make -j 2 || make)
