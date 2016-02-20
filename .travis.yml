@@ -42,5 +42,14 @@ matrix:
           packages:
             - clang-3.7
       env: COMPILER=clang++-3.7
+install:
+# Install CMake 3.4.3
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget --no-check-certificate http://cmake.org/files/v3.4/cmake-3.4.3-Linux-x86_64.tar.gz       ;fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then tar -xzf cmake-3.4.3-Linux-x86_64.tar.gz                                                      ;fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then wget --no-check-certificate http://cmake.org/files/v3.4/cmake-3.4.3-Darwin-x86_64.tar.gz      ;fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then tar -xzf cmake-3.4.3-Darwin-x86_64.tar.gz
 script:
-- cd tests && cmake . && (make -j || make -j 8 || make -j 4 || make -j 2 || make VERBOSE=1)
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd tests && ../cmake-3.4.3-Linux-x86_64/bin/cmake . && (make -j 8 || make VERBOSE=1)                      ;fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then cd tests && ../cmake-3.4.3-Darwin-x86_64/CMake.app/Contents/bin/cmake . && (make -j 8 || make VERBOSE=1)  ;fi
+
+#- cd tests && cmake . && (make -j 8 || make VERBOSE=1)
