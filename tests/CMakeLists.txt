@@ -21,6 +21,10 @@ target_link_libraries(yourproject ${htslib_LIB})
 include("cmake-ext/klib.cmake")
 add_dependencies(yourproject klib)
 
+include("cmake-ext/parasail.cmake")
+add_dependencies(yourproject parasail)
+target_link_libraries(yourproject ${parasail_LIB})
+
 include("cmake-ext/seqan.cmake")
 add_dependencies(yourproject seqan)
 
