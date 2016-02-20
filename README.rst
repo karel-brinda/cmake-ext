@@ -70,6 +70,22 @@ Web: http://attractivechaos.github.io/klib
 GitHub repository: https://github.com/attractivechaos/klib
 
 
+Seqan
+-----
+
+Usage:
+
+.. code-block:: cmake
+
+	include(ExternalProject)
+	include("cmake-ext/seqan.cmake")
+	add_dependencies(yourproject seqan)
+
+Web: http://www.seqan.de/
+
+GitHub repository: https://github.com/seqan/seqan/
+
+
 zlib
 ----
 
