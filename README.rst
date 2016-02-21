@@ -70,6 +70,20 @@ Web: http://attractivechaos.github.io/klib
 GitHub repository: https://github.com/attractivechaos/klib
 
 
+Parasail
+--------
+
+Usage:
+
+.. code-block:: cmake
+
+	include("cmake-ext/parasail.cmake")
+	add_dependencies(yourproject parasail)
+	target_link_libraries(yourproject ${parasail_LIB})
+
+GitHub repository: https://github.com/jeffdaily/parasail
+
+
 Seqan
 -----
 
