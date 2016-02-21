@@ -1,0 +1,1 @@
+../../smhasher.cmake

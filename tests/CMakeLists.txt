@@ -28,6 +28,10 @@ target_link_libraries(yourproject ${parasail_LIB})
 include("cmake-ext/seqan.cmake")
 add_dependencies(yourproject seqan)
 
+include("cmake-ext/smhasher.cmake")
+add_dependencies(yourproject smhasher)
+target_link_libraries(yourproject ${smhasher_LIB})
+
 include("cmake-ext/zlib.cmake")
 add_dependencies(yourproject zlib)
 target_link_libraries(yourproject ${zlib_LIB})
