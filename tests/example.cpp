@@ -18,18 +18,24 @@
 
 /* Parasail */
 #include "parasail.h"
-#include "parasail/matrices/blosum62.h"
 #include "parasail/matrix_lookup.h"
 
 /* Seqan */
-#include <seqan/basic.h>
-#include <seqan/sequence.h>
-#include <seqan/stream.h>
+#include "seqan/basic.h"
+#include "seqan/sequence.h"
+#include "seqan/stream.h"
 
 /* zlib */
 #include "zlib.h"
 
 int main(){
+
+    /* GATB*/
+    const char* seq = "CATTGATAGTGGATGGT";
+    Data data ((char*)seq);
+    Kmer<>::ModelDirect model (5);
+    Kmer<>::ModelDirect::Iterator it (model);
+    it.setData (data);
 
     /* Parasail */
     const char *s1 = "asdf";
@@ -42,8 +48,13 @@ int main(){
     result = parasail_sw(s1, s1Len, s2, s2Len, -11, -1, &parasail_blosum62);
     parasail_result_free(result);
 
+    /* Seqan */
+    seqan::StringSet<seqan::DnaString> stringSet;
+    seqan::DnaString str0 = "TATA";
+    seqan::DnaString str1 = "CGCG";
+    appendValue(stringSet, str0);
+    appendValue(stringSet, str1);
 
-    printf("Test\n");
     return 0;
 }
 

@@ -4,7 +4,7 @@ add_executable(yourproject example.cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include(ExternalProject)
+#include(ExternalProject)
 
 include("cmake-ext/gatbcore.cmake")
 add_dependencies(yourproject gatbcore)

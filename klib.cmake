@@ -1,3 +1,5 @@
+include(ExternalProject)
+
 set(klib_PREFIX ${CMAKE_BINARY_DIR}/cmake-ext/klib-prefix)
 set(klib_INSTALL ${CMAKE_BINARY_DIR}/cmake-ext/klib-install)
 

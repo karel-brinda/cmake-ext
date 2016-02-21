@@ -1,3 +1,5 @@
+include(ExternalProject)
+
 set(gatbcore_PREFIX ${CMAKE_BINARY_DIR}/cmake-ext/gatbcore-prefix)
 set(gatbcore_INSTALL ${CMAKE_BINARY_DIR}/cmake-ext/gatbcore-install)
 
@@ -6,6 +8,7 @@ ExternalProject_Add(gatbcore
     URL "http://gatb-core.gforge.inria.fr/versions/src/gatb-core-1.1.0-Source.tar.gz"
     #GIT_TAG "tag"
     INSTALL_DIR ${gatbcore_INSTALL}
+    UPDATE_COMMAND ""
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
         -DCMAKE_INSTALL_PREFIX=${gatbcore_INSTALL}
