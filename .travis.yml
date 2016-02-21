@@ -11,7 +11,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'george-edison55-precise-backports']
-          packages: ['g++-5', 'cmake', 'cmake-data', 'python-nose', 'python-jinja2', 'python-pip']
+          packages: ['g++-5', 'cmake', 'cmake-data', 'python-nose', 'python-jinja2', 'python-pip', 'libboost-dev']
       install:
         - export CXX="g++-5" CC="gcc-5"
 
@@ -21,6 +21,7 @@ matrix:
         - sudo brew update
         - sudo brew tap homebrew/versions
         - sudo brew install llvm37
+        - sudo brew install boost155
         - brew unlink cmake && sudo brew install cmake31
         - pip install --upgrade jinja2 nose
       install:
