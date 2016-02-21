@@ -22,8 +22,8 @@ matrix:
         - sudo brew tap homebrew/versions
         - sudo brew install llvm37
         - sudo brew install boost155
-        - brew unlink cmake && sudo brew install cmake31
-        - pip install --upgrade jinja2 nose
+        - sudo brew unlink cmake && sudo brew install cmake31
+        - sudo pip install --upgrade jinja2 nose
       install:
         - export CXX="clang++-3.7" CC="clang-3.7"
 
