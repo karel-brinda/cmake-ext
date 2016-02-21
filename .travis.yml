@@ -8,11 +8,12 @@ matrix:
 
     - os: linux 
       compiler: gcc5
-        addons:
-          apt:
-            sources: ['ubuntu-toolchain-r-test', 'george-edison55-precise-backports']
-            packages: ['g++-5', 'cmake', 'cmake-data', 'python-nose', 'python-jinja2', 'python-pip']
-      install: export CXX="g++-5" CC="gcc-5"
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test', 'george-edison55-precise-backports']
+          packages: ['g++-5', 'cmake', 'cmake-data', 'python-nose', 'python-jinja2', 'python-pip']
+      install:
+        - export CXX="g++-5" CC="gcc-5"
 
     - os: osx
       compiler: clang-3.7
@@ -22,7 +23,8 @@ matrix:
         - sudo brew install llvm37
         - sudo brew install cmake31
         - pip install --upgrade jinja2 nose
-      install: ['export CXX="clang++-3.7" CC="clang-3.7"' ]
+      install:
+        - export CXX="clang++-3.7" CC="clang-3.7"
 
 script:
   - cd tests && cmake . && (make -j 8 || make VERBOSE=1)
