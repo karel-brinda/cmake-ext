@@ -25,6 +25,9 @@
 #include "seqan/sequence.h"
 #include "seqan/stream.h"
 
+/* SSW */
+#include "ssw.h"
+
 /* zlib */
 #include "zlib.h"
 

@@ -5,6 +5,7 @@ This repository contains configuration CMake files for several popular libraries
 
 .. _external projects: https://cmake.org/cmake/help/v3.5/module/ExternalProject.html
 
+
 GATB-Core
 ---------
 
@@ -93,6 +94,20 @@ Usage:
 Web: http://www.seqan.de/
 
 GitHub repository: https://github.com/seqan/seqan/
+
+
+SSW
+---
+
+Usage:
+
+.. code-block:: cmake
+
+	include("cmake-ext/ssw.cmake")
+	add_dependencies(yourproject ssw)
+	target_link_libraries(yourproject ${ssw_LIB})
+
+GitHub repository: https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library
 
 
 zlib
