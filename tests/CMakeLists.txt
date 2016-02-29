@@ -28,6 +28,10 @@ target_link_libraries(yourproject ${parasail_LIB})
 include("cmake-ext/seqan.cmake")
 add_dependencies(yourproject seqan)
 
+include("cmake-ext/ssw.cmake")
+add_dependencies(yourproject ssw)
+target_link_libraries(yourproject ${ssw_LIB})
+
 include("cmake-ext/zlib.cmake")
 add_dependencies(yourproject zlib)
 target_link_libraries(yourproject ${zlib_LIB})
