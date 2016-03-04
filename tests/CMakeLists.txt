@@ -25,6 +25,10 @@ include("cmake-ext/parasail.cmake")
 add_dependencies(yourproject parasail)
 target_link_libraries(yourproject ${parasail_LIB})
 
+include("cmake-ext/sdsl.cmake")
+add_dependencies(yourproject sdsl)
+target_link_libraries(yourproject ${sdsl_LIB})
+
 include("cmake-ext/seqan.cmake")
 add_dependencies(yourproject seqan)
 

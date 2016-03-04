@@ -20,6 +20,9 @@
 #include "parasail.h"
 #include "parasail/matrix_lookup.h"
 
+/* SDSL */
+#include <sdsl/suffix_arrays.hpp>
+
 /* Seqan */
 #include "seqan/basic.h"
 #include "seqan/sequence.h"
@@ -50,6 +53,9 @@ int main(){
 
     result = parasail_sw(s1, s1Len, s2, s2Len, -11, -1, &parasail_blosum62);
     parasail_result_free(result);
+
+    /* SDSL */
+    sdsl::csa_wt<> fm_index;
 
     /* Seqan */
     seqan::StringSet<seqan::DnaString> stringSet;
