@@ -81,6 +81,20 @@ Usage:
 GitHub repository: https://github.com/jeffdaily/parasail
 
 
+SDSL
+----
+
+Usage:
+
+.. code-block:: cmake
+
+	include("cmake-ext/sdsl.cmake")
+	add_dependencies(yourproject sdsl)
+	target_link_libraries(yourproject ${sdsl_LIB})
+
+GitHub repository: https://github.com/simongog/sdsl-lite
+
+
 Seqan
 -----
 

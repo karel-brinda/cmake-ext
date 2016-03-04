@@ -12,6 +12,8 @@ ExternalProject_Add(zlib
     #CONFIGURE_COMMAND ${zlib_PREFIX}/src/zlib/configure --prefix=${zlib_INSTALL} --static
     INSTALL_DIR ${zlib_INSTALL}
     CMAKE_ARGS
+        -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+        -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
         -DCMAKE_INSTALL_PREFIX=${zlib_INSTALL}
         -DCMAKE_MACOSX_RPATH=0
