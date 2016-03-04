@@ -9,10 +9,14 @@ ExternalProject_Add(seqan
     GIT_TAG "seqan-v2.1.0"
     INSTALL_DIR ${seqan_INSTALL}
     UPDATE_COMMAND ""
-    CMAKE_ARGS
-        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-        -DCMAKE_INSTALL_PREFIX=${seqan_INSTALL}
-        -DSEQAN_BUILD_SYSTEM=SEQAN_RELEASE_LIBRARY
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory
+        <SOURCE_DIR> ${seqan_INSTALL}
+    #CMAKE_ARGS
+    #    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+    #    -DCMAKE_INSTALL_PREFIX=${seqan_INSTALL}
+    #    -DSEQAN_BUILD_SYSTEM=SEQAN_RELEASE_LIBRARY
 )
 
 include_directories(${seqan_INSTALL}/include)

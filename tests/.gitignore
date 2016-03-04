@@ -1,5 +1,8 @@
 yourproject
 
+*.sdsl
+*.sdsl.html
+
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
